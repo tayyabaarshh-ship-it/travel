@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Agent Website</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS3 -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff3e0, #e3f2fd);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(135deg, #d84315, #1565c0);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    nav {
+      background-color: #1976d2;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #0d47a1;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    img {
+      border-radius: 8px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: linear-gradient(135deg, #e65100, #0288d1);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #d84315, #01579b);
+    }
+
+    footer {
+      background: linear-gradient(135deg, #d84315, #1565c0);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      width: 100%;
+    }
+    label{
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      justify-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Global Travel Agents</h1>
+    <p>Your trusted partner for amazing trips</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('services')">Destinations & Services</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+  </nav>
+
+  <!-- Home Page -->
+  <section id="home" class="active">
+    <div class="card">
+      <h2>Welcome to Global Travel Agents</h2>
+      <p>We specialize in planning the perfect vacations for families, couples, and solo travelers.</p>
+      <button onclick="welcomeMessage()">Discover More</button>
+      <p id="welcomeText"></p>
+    </div>
+  </section>
+
+  <!-- Destinations & Services -->
+  <section id="services">
+    <div class="card">
+      <h2>Our Popular Destinations</h2>
+
+      <div class="card">
+        <h3>Paris</h3>
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
+        <p>The city of love and lights.</p>
+      </div>
+
+      <div class="card">
+        <h3>Dubai</h3>
+        <img src="https://www.shutterstock.com/image-photo/dubai-cityscape-modern-metro-railway-600nw-2414539851.jpg" alt="Dubai">
+        <p>Luxury, skyscrapers, and desert adventures.</p>
+      </div>
+
+      <div class="card">
+        <h3>Turkey</h3>
+        <img src="https://chasingthedonkey.b-cdn.net/wp-content/uploads/2019/10/Hot-air-balloon-flying-over-Cappadocia-Turkey_Depositphotos_51633651_l-2015.jpg" alt="Turkey">
+        <p>Rich history, culture, and beautiful landscapes.</p>
+      </div>
+      <div class="card">
+        <h3>Itlay</h3>
+        <img src="https://media.istockphoto.com/id/637504750/photo/florence.jpg?s=612x612&w=0&k=20&c=iKf4qM3Y8U0QjwINpQGCn_-fAtHCvL-KOGzh_xpQQ7I=" alt="Itlay">
+        <p>Rich history, art, culture, and delicious cuisine.</p>
+      </div>
+      <div class="card">
+        <h3>Maldives</h3>
+        <img src="https://www.wayfairertravel.com/hs-fs/hubfs/Imported%20sitepage%20images/shutterstock_2491499885_ss1ozt-1.jpg?width=1200&height=750&name=shutterstock_2491499885_ss1ozt-1.jpg" alt="Maldives">
+        <p>The Maldives is a tropical paradise in the Indian Ocean, famous for its crystal-clear waters, white sandy beaches, and vibrant coral reefs.
+</p>
+      </div>
+      <div class="card">
+        <h3>Malaysia</h3>
+        <img src="https://thumbs.dreamstime.com/b/kuala-lumpur-city-skyline-dramatic-sky-twilight-scene-malaysia-388058848.jpg" alt="Malaysia">
+        <p>Southeast Asian country known for its diverse culture, lush rainforests, beautiful islands, and bustling cities like Kuala Lumpur.</p>
+      </div>
+
+      <h2>Our Services</h2>
+      <ul id="serviceList"></ul>
+    </div>
+  </section>
+
+  <!-- Contact Page -->
+  <section id="contact">
+    <div class="card">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <input type="text" id="username" placeholder="Enter your name" />
+        <br>
+        <input type="email" id="email" placeholder="Enter your email" />
+        <br>
+        <input type="tel" id="phone" placeholder="Enter your phone number" />
+         <br>
+        <input type="date" id="travelDate" placeholder="Select travel date" />
+        <br>
+        <input type="number" id="people" placeholder="Number of travelers" />
+        <select id="destination">
+          <option value="">Select Destination</option>
+          <option>Paris</option>
+          <option>Dubai</option>
+          <option>Turkey</option>
+          <option>Itlay</option>
+          <option>Maldives</option>
+          <option>Malaysia</option>
+        </select>
+      </div>
+      <textarea id="message" rows="4" placeholder="Your message or special requests"></textarea>
+      <button onclick="submitForm()">Submit</button>
+      <p id="response"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Global Travel Agents</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function showPage(pageId) {
+      let pages = document.querySelectorAll('section');
+      for (let i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('active');
+      }
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    function welcomeMessage() {
+      let text = document.getElementById('welcomeText');
+      if (text.innerHTML === '') {
+        text.innerHTML = 'Pack your bags! Adventure is waiting for you ✈️';
+      } else {
+        text.innerHTML = '';
+      }
+    }
+
+    let services = ['Flight Booking', 'Hotel Reservations', 'Tour Packages', 'Travel Insurance'];
+    let list = document.getElementById('serviceList');
+    for (let i = 0; i < services.length; i++) {
+      let li = document.createElement('li');
+      li.textContent = services[i];
+      list.appendChild(li);
+    }
+
+    function submitForm() {
+      let name = document.getElementById('username').value;
+      let email = document.getElementById('email').value;
+      let phone = document.getElementById('phone').value;
+      let travelDate = document.getElementById('travelDate').value;
+      let people = document.getElementById('people').value;
+      let destination = document.getElementById('destination').value;
+      let message = document.getElementById('message').value;
+      let response = document.getElementById('response');
+
+      if (name === '' || email === '' || phone === '' || travelDate === '' || people === '' || destination === '') {
+        response.innerHTML = 'Please fill all required fields.';
+      } else {
+        response.innerHTML = `Thank you ${name}! Your trip to ${destination} on ${travelDate} for ${people} people has been received. We will contact you shortly.`;
+      }
+    }
+  </script>
+
+</body>
+</html>
